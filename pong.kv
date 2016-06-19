@@ -1,0 +1,39 @@
+<PongBall>:
+    size: 50,50
+    canvas:
+        Ellipse:
+            size: self.size
+            pos: self.pos
+
+<PongGame>:
+    ball: id1
+    canvas:
+        Rectangle:
+            pos: self.center_x-5,0
+            size: 10,self.height
+    Label:
+        text: "0"
+        pos: root.width*1/4,150
+        font_size: 50
+    Label:
+        text: "0"
+        pos: root.width*3/4,150
+        font_size: 50
+
+    PongBall:
+        id: id1
+        center: self.parent.center
+    Paddle:
+        pos: 10,root.center_y
+        size: 20,100
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    Paddle:
+        pos: root.right-30,root.center_y
+        size: 20,100
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
